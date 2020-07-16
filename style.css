@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+:root {
+    --modal-duration: .6s;
+    --primary-color: #5f27cd;
+    --secondary-color:#be2edd;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    transition: 0.3s ease transform ;
+}
+
+body.show-nav {
+    /*width of nav */
+    transform: translate(200px);
+}
+
+nav {
+    background-color: var(--primary-color);
+    border-right: 2px solid rgba(200, 200, 200, .1);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    z-index: 100;
+    transform: translateX(-100%);
+}
+
+nav .logo {
+    padding: 30px 0;
+    text-align: center;
+}
+
+nav .logo img {
+    height: 170px;
+    width: 170px;
+}
+
+nav ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: .05rem;
+}
+
+nav ul li {   
+    padding: 10px;
+}
+
+nav ul li a {
+    display: block;
+    color: #c8d6e5;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    display: block;
+    color: #ff9f43;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 130%;
+    position: relative;
+    padding: 40px 15px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 30px 0;
+}
+
+button, input[type='submit'] {
+    background-color: var(--secondary-color);
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 8px 12px;
+    outline: none;
+}
+
+input[type='submit'] {
+    position: relative;
+    right:-296px;
+}
+
+button:focus {
+    outline: none;
+}
+
+.toggle {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.cta-btn {
+    padding: 12px 30px;
+    font-size: 20px;
+}
+
+.container {
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 800px;
+}
+
+.modal-container {
+    background-color: rgba(0,0,0,0.6);   
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.modal-container.show-modal {
+    display: block;
+}
+
+.modal {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    width: 400px;
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
+}
+
+.modal-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 14px;
+}
+
+.modal-header h3 {
+    margin: 0;    
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.modal-content p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.modal-form div {
+    margin: 15px 0;
+}
+
+.modal-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-form .form-input {
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #576574;
+}
+
+.close-btn {
+    background: transparent;
+    font-size: 25px;
+    position: absolute;
+    top: 4px;
+    right: 0;
+}
+
+.close-btn:hover {
+    color: #ff9f43;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
